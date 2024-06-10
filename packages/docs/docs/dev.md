@@ -10,7 +10,7 @@ v18.19.1
 ### CLI 安装
 
 ```bash
-npm i -g @xhs/red-pkg
+npm i -g vue-pkg
 ```
 
 <img src="/cli.jpg" />
