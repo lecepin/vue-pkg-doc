@@ -7,7 +7,7 @@ import { Button, Card } from 'my-vue-lib'
     <Button></Button>
     <Button text="Primary"></Button>
 
-    <Card>card</Card>
+    <Card>card2</Card>
   </div>
 </template>
 

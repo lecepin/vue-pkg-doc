@@ -1,0 +1,46 @@
+{
+  "name": "vitepress-code-demo-plugin",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@types/hash-sum": "^1.0.2",
+    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it-container": "^2.0.9",
+    "@types/unist": "^3.0.2",
+    "rollup": "^4.6.0",
+    "rollup-plugin-ts": "^3.4.5",
+    "vite": "^5.0.2"
+  },
+  "dependencies": {
+    "hash-sum": "^2.0.0",
+    "markdown-it": "^13.0.2",
+    "markdown-it-container": "^3.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.4"
+  },
+  "engines": {
+    "node": ">= 16"
+  }
+}

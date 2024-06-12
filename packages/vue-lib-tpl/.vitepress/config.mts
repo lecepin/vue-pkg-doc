@@ -2,6 +2,11 @@ import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
 import { readFileSync } from 'fs'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import {
+  viteDemoPreviewPlugin,
+  demoPreviewPlugin
+} from 'vitepress-code-demo-plugin'
+import { fileURLToPath } from 'url'
 
 const pkg = JSON.parse(
   readFileSync(resolve(__dirname, '../package.json'), 'utf-8')
@@ -52,10 +57,14 @@ export default defineConfig({
     darkModeSwitchTitle: '切换到深色模式'
   },
   markdown: {
-    config(md) {}
+    config(md) {
+      const docRoot = fileURLToPath(new URL('../', import.meta.url))
+      // @ts-ignore
+      md.use(demoPreviewPlugin, { docRoot })
+    }
   },
   vite: {
-    plugins: [vueJsx()],
+    plugins: [vueJsx(), viteDemoPreviewPlugin()],
     resolve: {
       alias: {
         [pkg.name]: resolve(__dirname, '../src/index.ts')
