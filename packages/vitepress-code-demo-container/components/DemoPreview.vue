@@ -6,11 +6,10 @@
       </div>
       <div :class="$style['example-divider--horizontal']"></div>
       <div :class="$style['example-actions']">
-
         <div :class="$style['example-actions--right']">
-          <Tooltip placement="top" :content="locale['edit-in-playground']">
+          <!-- <Tooltip placement="top" :content="locale['edit-in-playground']">
             <Playground v-if="lang === 'vue'" style="cursor: pointer" :code="decodedSource" />
-          </Tooltip>
+          </Tooltip> -->
           <Tooltip placement="top" :content="locale['full-screen']">
             <FullScreen style="cursor: pointer" @click="fullScreen" />
           </Tooltip>
@@ -37,9 +36,15 @@
         </div>
       </CollapseTransition>
       <Transition name="el-fade-in-linear">
-        <div v-show="isExpanded" :class="$style['example-control']" @click="toggleExpanded">
+        <div
+          v-show="isExpanded"
+          :class="$style['example-control']"
+          @click="toggleExpanded"
+        >
           <span :class="$style['control-icon']"></span>
-          <span :class="$style['control-text']">{{ locale['hide-source'] }}</span>
+          <span :class="$style['control-text']">{{
+            locale['hide-source']
+          }}</span>
         </div>
       </Transition>
     </section>
@@ -58,7 +63,7 @@ import Copy from './icons/Copy.vue'
 import Code from './icons/Code.vue'
 import { useCopyCode } from '../hooks/useCopyCode'
 import DemoFullScreenPreview from './DemoFullScreenPreview.vue'
-import Playground from './icons/SfcPlayground.vue'
+// import Playground from './icons/SfcPlayground.vue'
 import '../style/index.css'
 
 interface DemoProps {
@@ -69,12 +74,12 @@ interface DemoProps {
 }
 
 defineOptions({
-  name: 'DemoPreview',
+  name: 'DemoPreview'
 })
 const props = withDefaults(defineProps<DemoProps>(), {
   lang: 'vue',
   isFile: false,
-  hlSource: '',
+  hlSource: ''
 })
 const locale = computed(() => {
   return {
@@ -83,7 +88,7 @@ const locale = computed(() => {
     'edit-in-playground': '在 Vue 演练场中编辑',
     'full-screen': '全屏预览',
     'copy-code': '复制代码',
-    'copy-success': '复制成功',
+    'copy-success': '复制成功'
   }
 })
 const decodedSource = computed(() => decodeURIComponent(props.source))

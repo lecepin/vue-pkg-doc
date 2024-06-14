@@ -6,7 +6,6 @@ import {
   viteDemoPreviewPlugin,
   demoPreviewPlugin
 } from 'vitepress-code-demo-plugin'
-import { fileURLToPath } from 'url'
 
 const pkg = JSON.parse(
   readFileSync(resolve(__dirname, '../package.json'), 'utf-8')
@@ -58,9 +57,8 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
-      const docRoot = fileURLToPath(new URL('../', import.meta.url))
       // @ts-ignore
-      md.use(demoPreviewPlugin, { docRoot })
+      md.use(demoPreviewPlugin)
     }
   },
   vite: {

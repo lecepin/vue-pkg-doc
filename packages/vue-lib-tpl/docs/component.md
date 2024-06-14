@@ -1,24 +1,30 @@
-## 组件文档
+# Input
+
+Input 示例。
+
+### 内联用法
+
+使用 `xxx`、`yyy` 和 `zzz` 来定义样式。
 
 :::demo
 
 ```vue
 <script setup lang="ts">
-import { Button, Card } from 'my-vue-lib'
+import { Input } from 'my-vue-lib'
+import { ref } from 'vue'
+
+const refInput = ref(null)
 </script>
 
 <template>
   <div class="demo">
-    <Button></Button>
-    <Button text="Primary"></Button>
-
-    <Card>card</Card>
+    <Input placeholder="请输入…" ref="refInput"> </Input>
+    <button @click="refInput.focus()">聚焦</button>
   </div>
 </template>
 
 <style scoped>
 .demo {
-  padding: 1em;
   display: flex;
   gap: 10px;
 }
@@ -27,5 +33,4 @@ import { Button, Card } from 'my-vue-lib'
 
 :::
 
-:::demo src=../src/Demo.vue
-:::
+<!--@include: ./api.md-->

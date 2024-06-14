@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import type { Plugin } from 'vite'
 import type MarkdownIt from 'markdown-it'
+import type { PluginSimple } from 'markdown-it'
 import container from 'markdown-it-container'
 import { cacheCode, cacheFile, markdownToComponent } from './remark'
 
@@ -93,11 +94,8 @@ export function viteDemoPreviewPlugin(): Plugin {
   }
 }
 
-export function demoPreviewPlugin(
-  md: MarkdownIt,
-  options: PreviewPluginOptions = {}
-) {
-  options.componentName = options.componentName || 'DemoPreview'
+export const demoPreviewPlugin: PluginSimple = (md) => {
+  const options = { componentName: 'DemoPreview' }
   md.use(createDemoContainer, options)
   md.use(renderDemoCode)
 }

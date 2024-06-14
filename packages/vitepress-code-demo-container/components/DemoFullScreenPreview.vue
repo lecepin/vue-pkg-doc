@@ -53,7 +53,6 @@ body:has(.example-modal) {
   top: 0;
   z-index: 3001;
   background-color: var(--preview-bg);
-  opacity: 0.95;
 }
 
 .example-showcase {
