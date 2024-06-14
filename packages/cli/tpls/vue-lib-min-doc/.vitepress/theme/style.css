@@ -2,3 +2,6 @@
   display: table;
   width: 100%;
 }
+#VPContent .container > .content {
+  padding: 0;
+}
