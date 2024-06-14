@@ -32,7 +32,7 @@ export type Emits = {
 import { nextTick, shallowRef, useAttrs } from 'vue'
 
 defineOptions({
-  name: 'ElInput',
+  name: 'VuePkgInput',
   inheritAttrs: false
 })
 
