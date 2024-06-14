@@ -1,0 +1,73 @@
+{
+  "name": "{{ pkgName}}",
+  "version": "0.0.0",
+  "description": "",
+  "author": "{{ author }}",
+  "homepage": "",
+  "type": "module",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/es/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config lib.vite.config.ts",
+    "build": "npm run type-check && npm run build-only",
+    "build-only": "vite build --config lib.vite.config.ts",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/",
+    "prepare": "husky install && cp scripts/hooks/* .husky/",
+    "prepublishOnly": "npm run build",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
+      "npm run lint",
+      "npm run format"
+    ]
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "sideEffects": [],
+  "devDependencies": {
+    "vite-plugin-node-polyfills": "^0.21.0",
+    "vitepress": "^1.1.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.12.5",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "stylus": "^0.63.0",
+    "typescript": "~5.4.0",
+    "vite": "^5.2.8",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vue-tsc": "^2.0.11",
+    "vitepress-code-demo-plugin": "^0.0.1",
+    "vitepress-code-demo-container": "^0.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
