@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: '{{ pkgName }}'
+  name: '{{{ pkgName }}}'
   text: 'Vue 库&文档解决方案'
   image:
     src: /logo.min.png

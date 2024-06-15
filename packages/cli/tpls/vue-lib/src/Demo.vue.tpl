@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input } from '{{ pkgName }}'
+import { Input } from '{{{ pkgName }}}'
 </script>
 
 <template>

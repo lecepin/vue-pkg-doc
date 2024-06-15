@@ -10,7 +10,7 @@ Input 示例。
 
 ```vue
 <script setup lang="ts">
-import { Input } from '{{ pkgName }}'
+import { Input } from '{{{ pkgName }}}'
 import { ref } from 'vue'
 
 const refInput = ref(null)

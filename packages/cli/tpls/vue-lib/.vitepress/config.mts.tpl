@@ -13,7 +13,7 @@ const pkg = JSON.parse(
 
 export default defineConfig({
   base: '/',
-  title: '{{ pkgName }}',
+  title: '{{{ pkgName }}}',
   description: '...',
   lang: 'zh',
   themeConfig: {
