@@ -74,8 +74,6 @@ lang: en-US
 
 此数据将可用于页面的其余部分，以及所有自定义和主题组件。
 
-更多信息，参见 [frontmatter](../reference/frontmatter-config)。
-
 ## GitHub 风格的表格 {#github-style-tables}
 
 **输入**
@@ -256,8 +254,6 @@ export default {
 ```
 
 在 Shiki 的代码仓库中，可以找到[合法的编程语言列表](https://shiki.style/languages)。
-
-还可以全局配置中自定义语法高亮主题。有关详细信息，参见 [`markdown` 选项](../reference/site-config#markdown)得到更多信息。
 
 ## 在代码块中实现行高亮 {#line-highlighting-in-code-blocks}
 
@@ -462,8 +458,6 @@ export default {
   }
 }
 ```
-
-查看 [`markdown` 选项](../reference/site-config#markdown) 获取更多信息。
 
 可以在代码块中添加 `:line-numbers` / `:no-line-numbers` 标记来覆盖在配置中的设置。
 

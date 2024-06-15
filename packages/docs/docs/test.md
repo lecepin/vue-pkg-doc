@@ -92,8 +92,6 @@ export default defineConfig({
 })
 ```
 
-可以参阅 [配置索引](../config/) 中的配置选项列表
-
 ::: warning
 如果你决定为 Vite 和 Vitest 使用两个单独的配置文件，请确保在 Vitest 配置文件中定义相同的 Vite 选项，因为它将覆盖你的 Vite 文件，而不是扩展它。你还可以使用 `vite` 或`vitest/config` 条目中的 `mergeConfig` 方法将 Vite 配置与 Vitest 配置合并：
 
