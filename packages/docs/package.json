@@ -17,6 +17,7 @@
   },
   "config": {},
   "dependencies": {
+    "cn-fontsource-lxgw-wen-kai-gb-screen-r": "^1.0.6",
     "simplex-noise": "^3.0.1",
     "three": "0.100.0",
     "vitepress-code-demo-container": "workspace:*",
