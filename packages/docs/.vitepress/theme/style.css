@@ -1,0 +1,16 @@
+@import url('https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-wen-kai-gb-screen-r/font.css');
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+body {
+  font-family: Roboto, 'LXGW WenKai GB Screen R', sans-serif;
+}
+
+:root {
+  --vp-c-brand-1: var(--vp-c-green-1);
+  --vp-c-brand-2: var(--vp-c-green-2);
+  --vp-c-brand-3: var(--vp-c-green-3);
+}

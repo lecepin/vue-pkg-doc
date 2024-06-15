@@ -12,12 +12,15 @@
   "sideEffects": [],
   "devDependencies": {
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "markdown-it-mathjax3": "^4.3.2",
     "vitepress": "^1.1.3"
   },
   "config": {},
   "dependencies": {
     "simplex-noise": "^3.0.1",
     "three": "0.100.0",
+    "vitepress-code-demo-container": "workspace:*",
+    "vitepress-code-demo-plugin": "workspace:*",
     "vue": "^3.4.27"
   }
 }

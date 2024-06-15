@@ -13,4 +13,4 @@ v18.19.1
 npm i -g vue-pkg
 ```
 
-<img src="/cli.jpg" />
+`vue-pkg` 内置自动更新逻辑。

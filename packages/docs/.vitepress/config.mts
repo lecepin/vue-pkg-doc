@@ -2,6 +2,10 @@ import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
 import { readFileSync } from 'fs'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import {
+  viteDemoPreviewPlugin,
+  demoPreviewPlugin
+} from 'vitepress-code-demo-plugin'
 
 const pkg = JSON.parse(
   readFileSync(resolve(__dirname, '../package.json'), 'utf-8')
@@ -29,39 +33,46 @@ export default defineConfig({
             link: '/docs/dev'
           },
           {
-            text: '目录结构',
-            link: '/docs/dir'
+            text: '初始化',
+            link: '/docs/init'
           }
         ]
       },
       {
-        text: 'CLI',
-        link: '/docs/8'
-      },
-      {
-        text: '文档使用',
+        text: '目录结构',
         collapsed: false,
         items: [
           {
-            text: '代码运行',
-            link: '/docs/2'
+            text: 'Vue 组件库标准版',
+            link: '/docs/vue-tpl'
           },
           {
-            text: '使用 Vue',
-            link: '/docs/3'
-          },
-          {
-            text: '主页定制',
-            link: '/docs/5'
-          },
-          {
-            text: 'API 生成',
-            link: '/docs/6'
-          },
-          {
-            text: '自定义配置',
-            link: '/docs/4'
+            text: 'Vue 组件库极简文档版',
+            link: '/docs/vue-min-doc-tpl'
           }
+        ]
+      },
+      {
+        text: '文档',
+        collapsed: false,
+        items: [
+          {
+            text: '写组件 Demo',
+            link: '/docs/demo'
+          },
+          {
+            text: 'API 模板',
+            link: '/docs/api'
+          },
+          {
+            text: 'Markdown 增强',
+            link: '/docs/markdown'
+          },
+          {
+            text: 'Markdown 中使用 Vue',
+            link: '/docs/markdown-vue'
+          },
+          { text: '国际化', link: '/docs/i18n' }
         ]
       },
       {
@@ -69,34 +80,22 @@ export default defineConfig({
         collapsed: false,
         items: [
           {
-            text: '一键构建',
-            link: '/docs/2'
-          },
-          {
-            text: '构建能力',
-            link: '/docs/2'
-          },
-          {
-            text: '构建场景',
-            link: '/docs/2'
-          },
-          {
-            text: '构建灵活配置',
-            link: '/docs/3'
+            text: 'Vue 组件库',
+            link: '/docs/build-vue'
           }
         ]
       },
       {
         text: '测试',
-        link: '/docs/7'
+        link: '/docs/test'
       },
       {
         text: '部署',
-        link: '/docs/7'
+        link: '/docs/deploy'
       },
       {
         text: '常见问题',
-        link: '/docs/7'
+        link: '/docs/qa'
       }
     ],
 
@@ -135,14 +134,18 @@ export default defineConfig({
     darkModeSwitchTitle: '切换到深色模式'
   },
   markdown: {
-    config(md) {}
+    config(md) {
+      // @ts-ignore
+      md.use(demoPreviewPlugin)
+    },
+    math: true
   },
   vite: {
-    plugins: [vueJsx()],
+    plugins: [vueJsx(), viteDemoPreviewPlugin()],
     resolve: {
-      // alias: {
-      //   [pkg.name]: resolve(__dirname, "../src/index.ts"),
-      // },
+      alias: {
+        pkg1: resolve(__dirname, '../src/index.ts')
+      }
     },
     optimizeDeps: {
       include: [],
