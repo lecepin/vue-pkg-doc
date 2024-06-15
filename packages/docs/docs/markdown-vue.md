@@ -118,7 +118,7 @@ This is a .md using a custom component
 
 ### 注册全局组件 {#registering-components-globally}
 
-如果一个组件要在大多数页面上使用，可以通过自定义 Vue 实例来全局注册它们。有关示例，请参见[扩展默认主题](./extending-default-theme#registering-global-components)中的相关部分。
+如果一个组件要在大多数页面上使用，可以通过自定义 Vue 实例来全局注册它们。
 
 ::: warning 重要
 确保自定义组件的名称包含连字符或采用 PascalCase。否则，它将被视为内联元素并包裹在 `<p>` 标签内，这将导致激活不匹配，因为 `<p>` 不允许将块元素放置在其中。
