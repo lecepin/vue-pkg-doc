@@ -50,8 +50,9 @@ npm install
 
 ### 命令
 
-> [!NOTE]
-> 以下命令适应于 Vue 组件开发。
+::: tip
+以下命令适应于 Vue 组件开发。
+:::
 
 - `npm run dev`：组件开发模式。脱离文档环境。
 - `npm run docs:dev`：组件文档开发环境。推荐。

@@ -5,7 +5,7 @@
 但在实施的过程中发现两个问题：
 
 1. Vue 这种非 JS 的文件，有多种声明类型，如 Props、Emit、Slot、Expose。相比 React 这种纯 JS 的，识别起来要繁琐得多。
-2. 用了很多生成解析工具，像 Styleguidist、ts-morph、TypeDoc 等工具，依然解决不了要用户手动去写的问题，毕竟不是纯 JS。
+2. 用了很多生成解析工具，像 Styleguidist、ts-morph、TypeDoc、JSDoc 等工具，依然解决不了要用户手动去写的问题。
 
 对比其它 Vue 库的实现，这里还是提供模板的方式来实现吧。
 
