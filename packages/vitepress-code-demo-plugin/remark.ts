@@ -89,7 +89,14 @@ export async function markdownToComponent(
       const virtualModules = _blocks
         .map((b) => {
           const moduleName = combineVirtualModule(id, b.key, b.lang)
-          return `import Virtual${b.key} from '${moduleName}'`
+          return `const Virtual${b.key} = defineAsyncComponent({
+  loader: () => import('${moduleName}'),
+  loadingComponent: {
+    render() {
+      return h('div', { style: 'text-align: left' }, 'loading...');
+    },
+  },
+})`
         })
         .join(os.EOL)
 
@@ -98,7 +105,7 @@ export async function markdownToComponent(
         node.value = node.value.replace(
           ScriptSetupRegex,
           (m: string, ...args: string[]) => {
-            return `<script ${args[0] ?? ''} setup ${args[1] ?? ''}>${
+            return `<script ${args[0] ?? ''} setup ${args[1] ?? ''}>import { defineAsyncComponent, h } from 'vue';${
               os.EOL
             }${virtualModules}${os.EOL}${args[2] ?? ''}</script>`
           }
@@ -106,7 +113,7 @@ export async function markdownToComponent(
       } else {
         tree.children?.push({
           type: 'html',
-          value: `<script setup>${os.EOL}${virtualModules}${os.EOL}</script>`
+          value: `<script setup>import { defineAsyncComponent, h } from 'vue';${os.EOL}${virtualModules}${os.EOL}</script>`
         })
       }
     })
