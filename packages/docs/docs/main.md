@@ -2,7 +2,7 @@
 
 默认美好，灵活定制，拥抱社区。
 
-<img src="/logo.min.png" width="150" />
+<img src="/logo.svg" width="150" />
 
 VUE-PKG 是一款为 Vue 组件开发场景而生的静态站点框架。默认支持 Vue 组件、Node 模块、前端库等多场景的 NPM 包的研发。
 

@@ -6,7 +6,7 @@ hero:
   text: 'Vue 库&文档解决方案'
   tagline: '为 Vue 组件研发而生的静态站点解决工具'
   image:
-    src: /logo.min.png
+    src: /logo.svg
   actions:
     - theme: brand
       text: 开始
